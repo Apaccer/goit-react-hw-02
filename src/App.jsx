@@ -12,7 +12,11 @@ function App() {
     neutral: 0,
     bad: 0,
   };
-  const [feedbackCounter, setFeedbackCounter] = useState(initialFeedback);
+  const [feedbackCounter, setFeedbackCounter] = useState(() => {
+    const stringifiedFeedback = localStorage.getItem("feedbackInfo");
+    const parsedFeedback = JSON.parse(stringifiedFeedback) ?? initialFeedback;
+    return parsedFeedback;
+  });
   const updateFeedback = (feedbackType) => {
     setFeedbackCounter({
       ...feedbackCounter,
@@ -32,7 +36,7 @@ function App() {
     setFeedbackCounter(initialFeedback);
   };
   return (
-    <>
+    <div className="container">
       <div>
         <h1>Sip Happens Café</h1>
         <p>
@@ -54,7 +58,7 @@ function App() {
       ) : (
         <Notification />
       )}
-    </>
+    </div>
   );
 }
 

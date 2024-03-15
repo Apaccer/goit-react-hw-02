@@ -1,0 +1,9 @@
+.good {
+  color: green;
+}
+.neutral {
+  color: rgb(227, 165, 51);
+}
+.bad {
+  color: red;
+}
