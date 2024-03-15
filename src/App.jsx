@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Options from "./assets/components/Options/Options";
-import Feedback from "./assets/components/Feedback/Feedback";
-import Notification from "./assets/components/Notification/Notification";
+import Options from "./components/Options/Options";
+import Feedback from "./components/Feedback/Feedback";
+import Notification from "./components/Notification/Notification";
 
 function App() {
   const initialFeedback = {
