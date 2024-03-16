@@ -18,9 +18,11 @@ function App() {
     return parsedFeedback;
   });
   const updateFeedback = (feedbackType) => {
-    setFeedbackCounter({
-      ...feedbackCounter,
-      [feedbackType]: feedbackCounter[feedbackType] + 1,
+    setFeedbackCounter((prevFeedback) => {
+      return {
+        ...prevFeedback,
+        [feedbackType]: prevFeedback[feedbackType] + 1,
+      };
     });
   };
 
